@@ -1,5 +1,15 @@
 name: hello-world # name of work-flow
-on: push #  tells how gha triggers
+on:  #  tells how gha jobs triggers
+  push:        # when code pushed to branches github actions jobs triggers/run
+    branches:
+      - main
+      - develop
+      - 'release/**' # based on relese branch any activity github actions jobs triggers
+
+  pull_request:  # when some one creates Pull Request(PR) to branches github actions jobs triggers
+    branches:
+      - main     # here we creating PR to trigger Github actions job
+
 jobs:
   builds:      # job name, job 1
     runs-on: ubuntu-latest  # on which compute or vm work flow runs
