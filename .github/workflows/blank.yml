@@ -1,12 +1,20 @@
 name: hello-world # name of work-flow
 on: workflow_dispatch #  tells how gha triggers
 jobs:
-  hello:      # job name
+  builds:      # job name, job 1
     runs-on: ubuntu-latest  # on which compute or vm work flow runs
     steps:
-      - name: hello step     # step name
-        run: |         #"pipe symbol will tell to run multiple shell command at a time"
-         echo  "This is line one"
-         echo  "This is line two"
-        
-        
+      - name: build step    # step name
+        run: echo "A build demo"
+
+  test:    # job 2
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test phase
+        run: echo "Running test case"
+
+  deploy: # job 3
+    runs-on: ubuntu-latest
+    steps:
+      - name: deploy the app
+        run: echo "deply app"
