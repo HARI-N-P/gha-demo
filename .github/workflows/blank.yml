@@ -5,4 +5,8 @@ jobs:
     runs-on: ubuntu-latest  # on which compute or vm work flow runs
     steps:
       - name: hello step     # step name
-        run: echo "Welcome to gha"  # what step should do or tsak need to perfom by step
+        run: |         #"pipe symbol will tell to run multiple shell command at a time"
+         echo  "This is line one"
+         echo  "This is line two"
+        
+        
