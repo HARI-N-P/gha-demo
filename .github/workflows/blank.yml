@@ -1,0 +1,8 @@
+name: hello-world # name of work-flow
+on: workflow_dispatch #  tells how gha triggers
+jobs:
+  hello:      # job name
+    runs-on: ubuntu-latest  # on which compute or vm work flow runs
+    steps:
+      - name: hello step     # step name
+        run: echo "Welcome to gha"  # what step should do or tsak need to perfom by step
