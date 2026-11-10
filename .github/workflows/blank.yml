@@ -1,10 +1,10 @@
 name: hello-world # name of work-flow
 on: push #  tells how gha triggers
 jobs:
-  builds:      # job name, job 1
+  builds:      # job name, 
     runs-on: ubuntu-latest  # on which compute or vm work flow runs
     steps:
       - name: build step    # step name
-        run: echo "A build demo" # step excuting commands
+        run: echo "Hi and Welcome ${{vars.MY_NAME}}"  # It will use MY_NMAE varible value and print in actions 
 
   
