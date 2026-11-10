@@ -5,6 +5,6 @@ jobs:
     runs-on: ubuntu-latest  # on which compute or vm work flow runs
     steps:
       - name: build step    # step name
-        run: echo "Hi and Welcome ${{vars.MY_NAME}}"  # It will use MY_NMAE varible value and print in actions 
+        run: echo "DOCKER_PASSWORD Is ${{secrets.DOCKER_PASSWORD}}"  # It will use Docker_Password secrect value and print in actions logs
 
   
