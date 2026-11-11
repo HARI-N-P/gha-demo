@@ -1,10 +1,10 @@
-name: hello-world # name of work-flow
+name: Actions Demo in workflow actions
 on: push #  tells how gha triggers
 jobs:
-  builds:      # job name, 
+  actions_demo:      # job name
     runs-on: ubuntu-latest  # on which compute or vm work flow runs
     steps:
-      - name: build step    # step name
-        run: echo "DOCKER_PASSWORD Is ${{secrets.DOCKER_PASSWORD}}"  # It will use Docker_Password secrect value and print in actions logs
-
-  
+      - name: checkout the code   # step name
+        uses: actions/checkout@v7
+      - name: print index.html file using ACTIONS in workflow
+        run: cat index.html
