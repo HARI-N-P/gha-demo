@@ -1,0 +1,11 @@
+name: work-flow-for-context-demo
+on: push
+
+jobs:
+  job-for-context-demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: steps-for-context-demo
+        run: | 
+          echo "wrokflow triggred by ${{ github.action }}"
+          echo "the repo name is ${{ github.repository }}"
