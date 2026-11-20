@@ -9,3 +9,8 @@ jobs:
         run: | 
           echo "wrokflow triggred by ${{ github.actor }}"
           echo "the repo name is ${{ github.repository }}"
+          echo "the repo name is ${{ github.ref_name }}"
+
+      - name: print all varibles under github
+        run: echo "${{ toJson(github) }}"
+         
