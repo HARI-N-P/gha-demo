@@ -1,3 +1,4 @@
+name: Nice IF Example
 on:
   push:
     branches:
