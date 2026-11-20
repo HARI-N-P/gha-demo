@@ -14,6 +14,10 @@ jobs:
       - name: print all varibles under github
         run: echo "${{ toJson(github) }}"
 
-      - name: print enviroment variables
+      - name: print all enviroment variables
         run: env
-         
+      - name: print a particular varible from enviroment variables
+        run: |
+          echo "$GITHUB_ARTIFACTS"
+          echo "$GITHUB_ACTOR_ID"
+          echo "$GITHUB_RUN_NUMBER"
