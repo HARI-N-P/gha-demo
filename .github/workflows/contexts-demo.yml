@@ -6,17 +6,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: steps-for-context-demo
-        run: | 
-          echo "wrokflow triggred by ${{ github.actor }}"
+        run: |
+          echo "workflow triggered by ${{ github.actor }}"
           echo "the repo name is ${{ github.repository }}"
-          echo "the repo name is ${{ github.ref_name }}"
+          echo "the branch name is ${{ github.ref_name }}"
 
-      - name: print all varibles under github
-        run: echo "${{ toJson(github) }}"
+      - name: print all variables under github
+        run: |
+          cat << 'EOF'
+          ${{ toJSON(github) }}
+          EOF
 
-      - name: print all enviroment variables
+      - name: print all environment variables
         run: env
-      - name: print a particular varible from enviroment variables
+
+      - name: print a particular variable from environment variables
         run: |
           echo "$GITHUB_ARTIFACTS"
           echo "$GITHUB_ACTOR_ID"
