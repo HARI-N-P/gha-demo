@@ -5,7 +5,13 @@ on:
       enviroments:
         description: chosse the enviroment to deploy
         required: true
+        type: choice
         default: dev
+        options:
+          - dev
+            test
+            prod
+        
 
 jobs:
   my-job-name-in-input-put-demo:
