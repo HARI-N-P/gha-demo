@@ -1,0 +1,15 @@
+name: If Demo
+on:
+  push:
+    branches:
+      - main
+      - develop
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run if branch is main or actor is Hari-N-P
+        if: github.ref_name == 'dde' || github.actor == 'Hari-N-P'
+        run: echo "Running for main branch or actor Hari-N-P"
+      - name: Run this step
+        run: echo "Running this step"
