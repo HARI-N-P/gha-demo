@@ -11,6 +11,9 @@ on:
           - dev
           - test
           - prod
+      arti_fact_tag:
+        description: choose the git tag to deploy code
+        required: true
         
 
 jobs:
@@ -18,6 +21,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: mystep-name-in-work-flows-job
-        run: echo "deploy the application to ${{ inputs.enviroments }}"
+        run: echo "deploy the ${{ inputs.arti_fact_tag }} application to ${{ inputs.enviroments }}"
   
   
