@@ -7,5 +7,5 @@ jobs:
     steps:
       - name: steps-for-context-demo
         run: | 
-          echo "wrokflow triggred by ${{ github.action }}"
+          echo "wrokflow triggred by ${{ github.actor }}"
           echo "the repo name is ${{ github.repository }}"
