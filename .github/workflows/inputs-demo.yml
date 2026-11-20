@@ -9,8 +9,8 @@ on:
         default: dev
         options:
           - dev
-            test
-            prod
+          - test
+          - prod
         
 
 jobs:
