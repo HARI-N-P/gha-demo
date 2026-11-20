@@ -13,6 +13,6 @@ jobs:
     needs: build-job
     runs-on: ubuntu-latest
     steps:
-      - name: deploy app
+      - name: deploy appli
         run: echo "we are deploying the app with above output oof above job version ${{ needs.build-job.outputs.version}} "
        
