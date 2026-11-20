@@ -12,6 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: mystep-name-in-work-flows-job
-        run: "deploy the application to ${{ inputs.enviroments }}"
+        run: echo "deploy the application to ${{ inputs.enviroments }}"
   
   
