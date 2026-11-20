@@ -1,11 +1,18 @@
 name: wf-for-outputs
 on: push
 jobs:
-  job-for-ops:
+  build-job:
     runs-on: ubuntu-latest
     steps:
       - name: step one
         id: step_1
         run: echo "version=1.0.0" >> $GITHUB_OUTPUT
-      - name: step two
-        run: echo "the version of step_1 using by step_2 and version is ${{ steps.step_1.outputs.version}}" 
+      outputs:
+        version: ${{ steps.step_1.outputs.version }}
+  deploy-job:
+    needs: build-job
+    runs-on: ubuntu-latest
+    steps:
+      - name: deploy app
+        run: echo "we are deploying the app with above output oof above job version ${{ needs.build-job.outputs.version}} "
+       
