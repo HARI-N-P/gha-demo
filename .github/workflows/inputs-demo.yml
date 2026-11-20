@@ -1,0 +1,17 @@
+name: work-flow-name-for-inputs-demo
+on: 
+  workflow_dispatch: 
+    inputs:
+      enviroments:
+        description: chosse the enviroment to deploy
+        required: true
+        default: dev
+
+jobs:
+  my-job-name-in-input-put-demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: mystep-name-in-work-flows-job
+        run: "deploy the application to ${{ inputs.enviroments }}"
+  
+  
